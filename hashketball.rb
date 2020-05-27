@@ -226,6 +226,7 @@ def big_shoe_rebounds
         team_stats.each do |player_stats|
           if player_stats.is_a?(Hash)
             if player_stats[:shoe] > big_shoe_size
+              big_shoe_size = player_stats[:shoe]
               big_shoe_player = player_stats
             end 
           end 
