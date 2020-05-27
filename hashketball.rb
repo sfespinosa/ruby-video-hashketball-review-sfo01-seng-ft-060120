@@ -195,7 +195,7 @@ def player_numbers(team_name)
               if team_stats == team_name
                 all_player_numbers.push(player_stats[:number])
               end 
-            end 
+            end e
           end 
         end 
       end 
