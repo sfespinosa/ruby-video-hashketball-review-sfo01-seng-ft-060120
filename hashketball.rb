@@ -190,7 +190,9 @@ def player_numbers(team_name)
       if team_stats == team_name
         if team_stats.is_a?(Array)
           team_stats.each do |player_stats|
-            all_player_numbers.push(player_stats[:number])
+            if player_stats.is_a?(Hash)
+              all_player_numbers.push(player_stats[:number])
+            end 
           end 
         end 
       end 
