@@ -190,6 +190,7 @@ def player_numbers(team_name)
       if team_stats.is_a?(Array)
         team_stats.each do |player_stats|
           if player_stats.is_a?(Hash)
+            binding.pry
             player_stats.each do |player_stat_type, player_detail|
               if team_stats == team_name
                 all_player_numbers.push(player_stats[:number])
