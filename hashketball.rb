@@ -186,10 +186,12 @@ end
 def player_numbers(team_name)
   all_player_numbers = []
   game_hash.each do |team, team_detail|
-    if team_detail == team_name 
-      if team_detail.is_a?(Array)
-        team_detail.each do |player_stats|
-          all_player_numbers.push(player_stats[:number])
+    team_detail.each do |detail_type, team_stats|
+      if team_stats == team_name
+        if team_stats.is_a?(Array)
+          team_stats.each do |player_stats|
+            all_player_numbers.push(player_stats[:number])
+          end 
         end 
       end 
     end 
