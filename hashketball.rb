@@ -216,3 +216,22 @@ def player_stats(player_name)
     end 
   end 
 end 
+
+def big_shoe_rebounds
+  big_shoe_player = {}
+  big_shoe_size = 0
+    game_hash.each do |team, team_details|
+    team_details.each do |detail_type, team_stats|
+      if team_stats.is_a?(Array)
+        team_stats.each do |player_stats|
+          if player_stats.is_a?(Hash)
+            if player_stats[:shoe] > big_shoe_size
+              big_shoe_player = player_stats
+            end 
+          end 
+        end 
+      end 
+    end 
+  end 
+  big_shoe_player[:rebounds]
+end 
