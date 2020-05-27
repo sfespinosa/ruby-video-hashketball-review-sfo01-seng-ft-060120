@@ -187,7 +187,12 @@ def player_numbers(team_name)
   all_player_numbers = []
   game_hash.each do |team, team_detail|
     if team_detail == team_name 
-      team_detail
+      if team_detail.is_a?(Array)
+        team_detail.each do |player_stats|
+          all_player_numbers.push(player_stats[:number])
+        end 
+      end 
     end 
   end 
+  all_player_numbers
 end 
