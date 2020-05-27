@@ -185,19 +185,20 @@ end
 
 def player_numbers(team_name)
   all_player_numbers = []
-  game_hash.each do |team, team_detail|
-    team_detail.each do |detail_type, team_stats|
-      if team_stats == team_name
-        if team_stats.is_a?(Array)
-          team_stats.each do |player_stats|
-            binding.pry
-            if player_stats.is_a?(Hash)
-              all_player_numbers.push(player_stats[:number])
+  game_hash.each do |team, team_details|
+    team_details.each do |detail_type, team_stats|
+      if team_stats.is_a?(Array)
+        team_stats.each do |player_stats|
+          if player_stats.is_a?(Hash)
+            player_stats.each do |player_stat_type, player_detail|
+              if team_stats == team_name
+                all_player_numbers.push(player_stats[:number])
+              end 
             end 
           end 
         end 
       end 
     end 
-  end 
+  end
   all_player_numbers
 end 
