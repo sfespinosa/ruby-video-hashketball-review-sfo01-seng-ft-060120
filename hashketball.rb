@@ -207,7 +207,7 @@ def player_stats(player_name)
       if team_stats.is_a?(Array)
         team_stats.each do |player_stats|
           if player_stats.is_a?(Hash)
-            if player_stats[:name] == player_name
+            if player_stats[:player_name] == player_name
               return player_stats
             end 
           end 
