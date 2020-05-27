@@ -168,9 +168,8 @@ end
 def team_colors(team_name)
   game_hash.each do |team, team_details|
     team_details.each do |detail_type, team_stats|
-      if team_stats.is_a?(Array)
-        team_stats.each do |player_stats|
-        end 
+      if team_stats == team_name
+        return team_details[:colors]
       end 
     end 
   end 
